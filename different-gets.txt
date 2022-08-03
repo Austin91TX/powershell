@@ -1,0 +1,22 @@
+#different get commands in powershell
+
+get-appxpackage -AllUsers | ft Name
+#get a list of installed apps for all users, getting package name
+
+get-appxpackage -AllUsers | ft PackageFullName
+#get a list of install apps for all users, getting full package name
+
+Get-AppXPackage *Amazon* -allUsers | Remove-AppXPackage -allUsers
+#remove anything containing *Amazon* for all users
+
+Get-AppXPackage -PackageTypeFilter bundle -AllUsers | ft name
+#get a list of bundled package types
+
+Get-AppXPackage *AmazonAlexa* -PackageTypeFilter bundle -allUsers | Remove-AppXPackage -allUsers
+#remove bundled package for anything containing "AmazonAlexa"
+
+Get-AppxProvisionedPackage -Online | ft packageName
+#get a list of online provisioned packages
+
+Remove-AppXProvisionedPackage -online -PackageName %FullPackageName%
+#remove online provisioned package
