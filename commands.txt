@@ -1,0 +1,17 @@
+# Basic commands for powershell learned from:https://www.youtube.com/watch?v=K4YDHFalAK8&ab_channel=Nerd%27slesson
+
+> [datetime]$d = "12/25/2022"
+#sets a datetime formatted variable $d to the date 12/25/2022
+
+> $d.DayOfWeek
+Sunday
+#.DayOfWeek outputs what day the datetime will fall on
+
+> $d.AddDays(30)
+Tuesday, January 24, 2023 12:00:00 AM
+#.AddDays(30) adds 30 days onto the specified datetime
+
+> $d.AddDays(- (7*6))
+Sunday, November 13, 2022 12:00:00 AM
+#.AddDays(- (7*6)) subtracts (7*6) from datetime
+
