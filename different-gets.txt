@@ -1,25 +1,25 @@
 #different get commands in powershell
 
-get-appxpackage -AllUsers | ft Name
 #get a list of installed apps for all users, getting package name
+get-appxpackage -AllUsers | ft Name
 
-get-appxpackage -AllUsers | ft PackageFullName
 #get a list of install apps for all users, getting full package name
+get-appxpackage -AllUsers | ft PackageFullName
 
-get-appxpackage -AllUsers | Select Name, SignatureKind, InstallLocation
 #get a list of installed apps for all users. Select/ft achieve the same thing. Name, SignatureKind, InstallLocation are more helpful for apps that don't have useful names
+get-appxpackage -AllUsers | Select Name, SignatureKind, InstallLocation
 
-Get-AppXPackage *Amazon* -allUsers | Remove-AppXPackage -allUsers
 #remove anything containing *Amazon* for all users
+Get-AppXPackage *Amazon* -allUsers | Remove-AppXPackage -allUsers
 
-Get-AppXPackage -PackageTypeFilter bundle -AllUsers | ft name
 #get a list of bundled package types
+Get-AppXPackage -PackageTypeFilter bundle -AllUsers | ft name
 
-Get-AppXPackage *AmazonAlexa* -PackageTypeFilter bundle -allUsers | Remove-AppXPackage -allUsers
 #remove bundled package for anything containing "AmazonAlexa"
+Get-AppXPackage *AmazonAlexa* -PackageTypeFilter bundle -allUsers | Remove-AppXPackage -allUsers
 
-Get-AppxProvisionedPackage -Online | ft packageName
 #get a list of online provisioned packages
+Get-AppxProvisionedPackage -Online | ft packageName
 
-Remove-AppXProvisionedPackage -online -PackageName %FullPackageName%
 #remove online provisioned package
+Remove-AppXProvisionedPackage -online -PackageName %FullPackageName%
