@@ -6,6 +6,9 @@ get-appxpackage -AllUsers | ft Name
 get-appxpackage -AllUsers | ft PackageFullName
 #get a list of install apps for all users, getting full package name
 
+get-appxpackage -AllUsers | Select Name, SignatureKind, InstallLocation
+#get a list of installed apps for all users. Select/ft achieve the same thing. Name, SignatureKind, InstallLocation are more helpful for apps that don't have useful names
+
 Get-AppXPackage *Amazon* -allUsers | Remove-AppXPackage -allUsers
 #remove anything containing *Amazon* for all users
 
